@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0b3c5d;
+  --color-secondary: #1e88e5;
+  --color-accent: #ff8c00;
+  --color-dark: #1c1c1c;
+  --color-light: #f8fafc;
+  --color-steel: #6b7280;
+  --font-heading: "Montserrat", sans-serif;
+  --font-subheading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.font-subheading {
+  font-family: var(--font-subheading);
+}
+
+/* Responsive container */
+.container-site {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-site {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-site {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Responsive section padding */
+.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 480px) {
+  .section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Clamp typography utilities */
+.text-hero {
+  font-size: clamp(1.75rem, 4vw + 0.5rem, 4.5rem);
+  line-height: 1.1;
+}
+
+.text-section-title {
+  font-size: clamp(1.5rem, 2.5vw + 0.5rem, 3rem);
+  line-height: 1.2;
+}
+
+.text-body-responsive {
+  font-size: clamp(0.875rem, 0.5vw + 0.75rem, 1.125rem);
+  line-height: 1.7;
+}
+
+.industrial-grid {
+  background-image:
+    linear-gradient(rgba(11, 60, 93, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 60, 93, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-dark {
+  background: rgba(11, 60, 93, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metal-texture {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%, rgba(0,0,0,0.05) 100%),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.02) 2px, rgba(255,255,255,0.02) 4px);
+}
+
+.blueprint-overlay {
+  background-image:
+    linear-gradient(rgba(30, 136, 229, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 136, 229, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 20% 30%, rgba(255, 140, 0, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(30, 136, 229, 0.04) 0%, transparent 50%);
+  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+}
+
+.footer-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 140, 0, 0.02) 10px,
+      rgba(255, 140, 0, 0.02) 11px
+    );
+  background-size: 60px 60px, 60px 60px, auto;
+}
+
+@keyframes spark {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.spark { animation: spark 2s ease-in-out infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.float { animation: float 6s ease-in-out infinite; }
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-slow { animation: rotate-slow 20s linear infinite; }
+
+/* Desktop-only hover effects */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+  .hover-scale-image {
+    transition: transform 0.5s ease;
+  }
+  .group:hover .hover-scale-image {
+    transform: scale(1.05);
+  }
+  .hover-shadow:hover {
+    box-shadow: 0 20px 40px rgba(11, 60, 93, 0.1);
+  }
+}
+
+/* Touch-friendly minimum target */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+  outline: 2px solid #1e88e5;
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #0b3c5d; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1e88e5; }
+
+/* Masonry gallery — 1 col mobile, 2 tablet, 3 desktop */
+.masonry-grid {
+  columns: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-grid { columns: 2; column-gap: 1.25rem; }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid { columns: 3; column-gap: 1.5rem; }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-item { margin-bottom: 1.25rem; }
+}
+
+.video-overlay {
+  background: linear-gradient(to bottom, rgba(11,60,93,0.7) 0%, rgba(11,60,93,0.4) 50%, rgba(11,60,93,0.8) 100%);
+}
+
+/* Prevent image/video overflow */
+img, video, iframe {
+  max-width: 100%;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .float,
+  .rotate-slow,
+  .spark {
+    animation: none !important;
+  }
+}
+
+/* Card equal height helper */
+.card-flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-flex-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

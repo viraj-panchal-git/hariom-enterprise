@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="dSteelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E88E5"/>
+      <stop offset="100%" stop-color="#0B3C5D"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="20" fill="#1C1C1C"/>
+  <circle cx="100" cy="100" r="70" stroke="url(#dSteelGrad)" stroke-width="4" fill="none"/>
+  <circle cx="100" cy="100" r="45" stroke="url(#dSteelGrad)" stroke-width="4" fill="#1C1C1C"/>
+  <path d="M78 68 L78 132 L88 132 L88 102 L112 102 L112 132 L122 132 L122 68 L112 68 L112 92 L88 92 L88 68 Z" fill="url(#dSteelGrad)"/>
+  <rect x="130" y="55" width="4" height="30" rx="1" fill="#FF8C00" transform="rotate(30 132 70)"/>
+</svg>

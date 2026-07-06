@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#F1F5F9"/>
+  <rect x="1" y="1" width="798" height="498" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="12 8"/>
+  <circle cx="400" cy="200" r="48" stroke="#0B3C5D" stroke-width="3" fill="none" opacity="0.35"/>
+  <circle cx="400" cy="200" r="20" stroke="#1E88E5" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M388 188 L388 212 L394 212 L394 198 L406 198 L406 212 L412 212 L412 188 L406 188 L406 194 L394 194 L394 188 Z" fill="#0B3C5D" opacity="0.4"/>
+  <text x="400" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="600" fill="#0B3C5D">Image Coming Soon</text>
+  <text x="400" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6B7280">Hariom Enterprise  Photography pending</text>
+</svg>
