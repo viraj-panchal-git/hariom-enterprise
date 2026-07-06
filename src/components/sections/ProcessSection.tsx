@@ -61,7 +61,7 @@ export default function ProcessSection() {
             return (
               <div
                 key={step.step}
-                className={`process-step relative flex items-start sm:items-center gap-4 sm:gap-6 mb-6 sm:mb-8 pl-10 sm:pl-0 ${
+                className={`process-step relative flex items-start sm:items-center gap-4 sm:gap-5 mb-4 sm:mb-5 pl-10 sm:pl-0 ${
                   i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >

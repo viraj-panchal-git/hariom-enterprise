@@ -26,7 +26,7 @@ export default function IndiaMARTSection() {
     <section className="section-padding bg-gradient-to-br from-primary to-dark relative overflow-hidden">
       <div className="absolute inset-0 industrial-grid opacity-10" />
       <div className="w-full max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           <motion.div
             initial={reducedMotion ? false : { opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -39,7 +39,7 @@ export default function IndiaMARTSection() {
             <h2 className="text-section-title font-bold text-white mt-2 sm:mt-3 mb-3 sm:mb-4">
               Find Us on IndiaMART
             </h2>
-            <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-4 sm:mb-5">
               Explore our complete product catalog and service offerings on IndiaMART.
               As a verified supplier based in Ahmedabad, we offer precision grinding,
               CNC machining, VMC components, dowel pins, taper pins, Traub parts, and

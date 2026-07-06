@@ -11,8 +11,8 @@ export default function Footer() {
       <div className="absolute inset-0 footer-pattern opacity-40 pointer-events-none" />
       <div className="absolute inset-0 blueprint-overlay opacity-10 pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div className="text-center sm:text-left flex flex-col items-center sm:items-start">
             <Image
               src="/logo/logo-white.svg"
@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-center">
+        <div className="border-t border-white/10 mt-6 sm:mt-8 pt-5 sm:pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-center">
           <p className="text-white/50 text-xs sm:text-sm">
             &copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
           </p>

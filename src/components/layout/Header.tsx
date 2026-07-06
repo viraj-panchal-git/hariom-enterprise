@@ -35,7 +35,9 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
-          scrolled || isOpen ? "glass-dark shadow-2xl py-2 sm:py-3" : "bg-transparent py-3 sm:py-4"
+          scrolled || isOpen
+            ? "bg-primary shadow-2xl border-b border-white/10 py-2 sm:py-3"
+            : "bg-transparent py-3 sm:py-4"
         }`}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -43,9 +45,9 @@ export default function Header() {
             <Image
               src="/logo/logo-horizontal-white.svg"
               alt={COMPANY.name}
-              width={180}
-              height={45}
-              className="h-8 w-auto sm:h-9 md:h-10 max-w-[140px] sm:max-w-[160px] md:max-w-none"
+              width={220}
+              height={55}
+              className="h-10 w-auto sm:h-11 md:h-12 lg:h-14 max-w-[170px] sm:max-w-[195px] md:max-w-[220px]"
               priority
             />
           </Link>

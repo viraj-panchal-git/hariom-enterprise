@@ -1,9 +1,12 @@
+import { COMPANY } from "./constants";
+
 export function cn(...classes: (string | boolean | undefined | null)[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 export function getWhatsAppUrl(message: string) {
-  return `https://wa.me/919428116410?text=${encodeURIComponent(message)}`;
+  const phone = COMPANY.whatsapp.replace(/\D/g, "");
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
 export function getTelUrl(phone: string) {

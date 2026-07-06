@@ -8,7 +8,7 @@ export default function EngineeringIllustration() {
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-[#0d4a6f] to-secondary shadow-2xl aspect-[4/3] min-h-[280px]">
+    <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-[#0d4a6f] to-secondary shadow-2xl aspect-[4/3] min-h-[220px] max-h-[320px]">
       <div className="absolute inset-0 blueprint-overlay" />
       <div className="absolute inset-0 metal-texture opacity-30" />
 

@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   async redirects() {
     return [
-      { source: "/gallery", destination: "/capabilities", permanent: true },
+      { source: "/gallery", destination: "/services", permanent: true },
+      { source: "/capabilities", destination: "/services", permanent: true },
     ];
   },
   images: {

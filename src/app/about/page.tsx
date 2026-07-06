@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import AboutSection from "@/components/sections/AboutSection";
-import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
-import ProcessSection from "@/components/sections/ProcessSection";
 import PageHero from "@/components/ui/PageHero";
 import { getBreadcrumbSchema } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
@@ -9,7 +7,7 @@ import { COMPANY } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About Us | Hariom Enterprise - Precision Engineering Ahmedabad",
   description:
-    "Learn about Hariom Enterprise, a premier precision engineering manufacturer in Ahmedabad specializing in CNC machining, grinding services, and custom industrial components.",
+    "About Hariom Enterprise — CNC, VMC and grinding job work in Ahmedabad. Owner Jayesh Panchal. Contact details and manufacturing capabilities.",
 };
 
 export default function AboutPage() {
@@ -26,11 +24,9 @@ export default function AboutPage() {
       />
       <PageHero
         title="About Us"
-        description="Precision engineering excellence from Ahmedabad, Gujarat"
+        description="Our work, owner, and how to connect with Hariom Enterprise"
       />
       <AboutSection fullPage />
-      <WhyChooseUsSection />
-      <ProcessSection />
     </>
   );
 }

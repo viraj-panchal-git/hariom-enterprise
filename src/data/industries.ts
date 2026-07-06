@@ -33,49 +33,6 @@ export const industries: { name: string; icon: LucideIcon }[] = [
   { name: "OEM Manufacturers", icon: Building2 },
 ];
 
-export const whyChooseUs = [
-  {
-    title: "Precision Manufacturing",
-    description: "Micron-level accuracy across all machining and grinding operations.",
-  },
-  {
-    title: "High Accuracy",
-    description: "Advanced measuring instruments ensure every component meets specifications.",
-  },
-  {
-    title: "Modern Machinery",
-    description: "State-of-the-art CNC, VMC, and grinding machines for consistent output.",
-  },
-  {
-    title: "Experienced Team",
-    description: "Skilled engineers and operators with decades of combined expertise.",
-  },
-  {
-    title: "Quality Assurance",
-    description: "Rigorous inspection at every stage from raw material to final dispatch.",
-  },
-  {
-    title: "Competitive Pricing",
-    description: "Efficient processes deliver premium quality at competitive market rates.",
-  },
-  {
-    title: "Fast Delivery",
-    description: "Optimized production planning ensures on-time delivery for every order.",
-  },
-  {
-    title: "Customer Satisfaction",
-    description: "Long-term partnerships built on trust, quality, and reliable service.",
-  },
-  {
-    title: "Reliable Support",
-    description: "Responsive communication and dedicated support for all inquiries.",
-  },
-  {
-    title: "Industrial Expertise",
-    description: "Deep knowledge of industrial manufacturing across diverse sectors.",
-  },
-];
-
 export const manufacturingSteps = [
   { step: 1, title: "Raw Material", description: "Sourced from certified suppliers with material test certificates." },
   { step: 2, title: "Cutting", description: "Precision cutting to size using bandsaw and cutoff machines." },

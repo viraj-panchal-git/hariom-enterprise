@@ -28,7 +28,7 @@ export default function SectionHeading({
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: reducedMotion ? 0 : 0.6 }}
       className={cn(
-        "mb-8 sm:mb-10 md:mb-12 lg:mb-16",
+        "mb-5 sm:mb-6 md:mb-8",
         align === "center" && "text-center",
         className
       )}

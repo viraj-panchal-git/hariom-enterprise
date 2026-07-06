@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import ProductsSection from "@/components/sections/ProductsSection";
-import ContactSection from "@/components/sections/ContactSection";
 import PageHero from "@/components/ui/PageHero";
 import { getBreadcrumbSchema } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
@@ -28,7 +27,6 @@ export default function ProductsPage() {
         description="High precision industrial machine components manufactured to specification"
       />
       <ProductsSection showAll />
-      <ContactSection />
     </>
   );
 }

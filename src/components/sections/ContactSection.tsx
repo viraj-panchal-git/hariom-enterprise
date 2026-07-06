@@ -25,7 +25,7 @@ export default function ContactSection() {
           title="Get In Touch With Us"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           <motion.div
             initial={reducedMotion ? false : { opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -117,7 +117,7 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg w-full aspect-[16/10] sm:aspect-[16/9] lg:h-64 lg:aspect-auto relative border border-gray-100">
+            <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg w-full aspect-[16/10] sm:aspect-[16/9] lg:h-56 lg:aspect-auto relative border border-gray-100">
               <iframe
                 src={getMapEmbedUrl(COMPANY.maps.coordinates.lat, COMPANY.maps.coordinates.lng)}
                 className="absolute inset-0 w-full h-full border-0"

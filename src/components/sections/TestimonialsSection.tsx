@@ -16,9 +16,14 @@ function getCompanyInitials(company: string): string {
     .toUpperCase() || company.slice(0, 2).toUpperCase();
 }
 
-export default function TestimonialsSection() {
+interface TestimonialsSectionProps {
+  limit?: number;
+}
+
+export default function TestimonialsSection({ limit }: TestimonialsSectionProps) {
   const canHover = useCanHover();
   const reducedMotion = usePrefersReducedMotion();
+  const displayTestimonials = limit ? testimonials.slice(0, limit) : testimonials;
 
   return (
     <section className="section-padding bg-white overflow-hidden relative">
@@ -30,7 +35,7 @@ export default function TestimonialsSection() {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {testimonials.map((testimonial, i) => (
+          {displayTestimonials.map((testimonial, i) => (
             <motion.div
               key={testimonial.name}
               initial={reducedMotion ? false : { opacity: 0, y: 30 }}

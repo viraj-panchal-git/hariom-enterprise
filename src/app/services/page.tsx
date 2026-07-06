@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import ServicesSection from "@/components/sections/ServicesSection";
-import ContactSection from "@/components/sections/ContactSection";
 import PageHero from "@/components/ui/PageHero";
 import { getBreadcrumbSchema } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
@@ -28,7 +27,6 @@ export default function ServicesPage() {
         description="Comprehensive precision manufacturing and grinding services"
       />
       <ServicesSection showAll />
-      <ContactSection />
     </>
   );
 }

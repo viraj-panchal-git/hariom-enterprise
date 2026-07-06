@@ -3,10 +3,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import { Send, Upload, CheckCircle, AlertCircle } from "lucide-react";
-import emailjs from "@emailjs/browser";
+import { Send, Upload, CheckCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { COMPANY } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { usePrefersReducedMotion } from "@/lib/hooks";
 
@@ -23,8 +21,31 @@ interface InquiryFormData {
 const inputClasses =
   "w-full px-4 py-3.5 sm:py-3 rounded-lg border border-gray-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all text-base sm:text-sm min-h-[48px]";
 
+function buildWhatsAppMessage(data: InquiryFormData, drawingFileName?: string) {
+  const lines = [
+    "Hello Hariom Enterprise,",
+    "",
+    "New inquiry from website:",
+    "",
+    `Name: ${data.fullName}`,
+    `Company: ${data.companyName.trim() || "Not provided"}`,
+    `Phone: ${data.phone}`,
+    `Email: ${data.email}`,
+    `Product Requirement: ${data.productRequirement}`,
+    `Quantity: ${data.quantity.trim() || "Not specified"}`,
+    `Message: ${data.message.trim() || "Not provided"}`,
+  ];
+
+  if (drawingFileName) {
+    lines.push(`Drawing File: ${drawingFileName}`);
+    lines.push("(Customer will attach the drawing file in WhatsApp chat)");
+  }
+
+  return lines.join("\n");
+}
+
 export default function InquiryForm() {
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "success">("idle");
   const [fileName, setFileName] = useState("");
   const reducedMotion = usePrefersReducedMotion();
   const {
@@ -34,49 +55,12 @@ export default function InquiryForm() {
     formState: { errors, isSubmitting },
   } = useForm<InquiryFormData>();
 
-  const onSubmit = async (data: InquiryFormData) => {
-    try {
-      const whatsappMessage = `Hello Hariom Enterprise,
-
-I need machining services.
-
-Name: ${data.fullName}
-Company: ${data.companyName}
-Phone: ${data.phone}
-Requirement: ${data.productRequirement}
-Quantity: ${data.quantity}
-Message: ${data.message}`;
-
-      try {
-        await emailjs.send(
-          "service_hariom",
-          "template_inquiry",
-          {
-            to_email: COMPANY.email,
-            from_name: data.fullName,
-            company: data.companyName,
-            phone: data.phone,
-            email: data.email,
-            requirement: data.productRequirement,
-            quantity: data.quantity,
-            message: data.message,
-          },
-          "public_key_placeholder"
-        );
-      } catch {
-        // EmailJS not configured — continue with WhatsApp redirect
-      }
-
-      setStatus("success");
-      reset();
-      setFileName("");
-
-      setTimeout(() => {
-        window.open(getWhatsAppUrl(whatsappMessage), "_blank");
-      }, 1500);
-    } catch {
-      setStatus("error");
-    }
+  const onSubmit = (data: InquiryFormData) => {
+    const message = buildWhatsAppMessage(data, fileName || undefined);
+    window.open(getWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+    setStatus("success");
+    reset();
+    setFileName("");
   };
 
   return (
@@ -181,6 +165,11 @@ Message: ${data.message}`;
             onChange={(e) => setFileName(e.target.files?.[0]?.name || "")}
           />
         </label>
+        {fileName && (
+          <p className="text-steel text-[10px] sm:text-xs mt-1.5">
+            File name will be included in WhatsApp — attach the file manually in the chat after it opens.
+          </p>
+        )}
       </div>
 
       <div className="w-full min-w-0">
@@ -202,25 +191,13 @@ Message: ${data.message}`;
           role="status"
         >
           <CheckCircle size={20} className="shrink-0 mt-0.5" />
-          Inquiry submitted! Redirecting to WhatsApp...
-        </motion.div>
-      )}
-
-      {status === "error" && (
-        <motion.div
-          initial={reducedMotion ? false : { opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex items-start gap-2 text-red-600 bg-red-50 p-4 rounded-lg text-sm"
-          role="alert"
-        >
-          <AlertCircle size={20} className="shrink-0 mt-0.5" />
-          Something went wrong. Please try WhatsApp or call us directly.
+          Opening WhatsApp with your inquiry details. Send the message to complete your request.
         </motion.div>
       )}
 
       <Button type="submit" variant="accent" size="lg" disabled={isSubmitting} fullWidth className="md:w-auto md:min-w-[200px]">
         <Send size={18} />
-        {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+        Submit Inquiry via WhatsApp
       </Button>
     </form>
   );

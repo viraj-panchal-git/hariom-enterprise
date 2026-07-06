@@ -3,7 +3,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = COMPANY.url;
-  const routes = ["", "/about", "/services", "/products", "/capabilities", "/contact"];
+  const routes = ["", "/about", "/services", "/products", "/contact"];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
